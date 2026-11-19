@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Untuk Nara</title>
+<style>
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;font-family:"Segoe UI",system-ui,sans-serif;color:#3b3335}
+.scr{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center}
+.scr.on{display:flex}
+#s1{background:#0b0b0e;color:#fff;gap:10px;cursor:pointer}
+#s1 .for{font-family:Georgia,serif;font-style:italic;font-size:1.7rem}
+#s1 small{opacity:.55}
+.fl{transform-origin:50% 100%;animation:bloom 1.6s ease both}
+@keyframes bloom{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+#s2{background:repeating-linear-gradient(90deg,#fbe3ec 0 28px,#f7d3e0 28px 56px);gap:14px;text-align:center;padding:16px}
+#s2 b{font-size:1.05rem}
+.mon{width:min(72vw,300px);background:#e8dcc4;border-radius:18px;padding:16px 16px 26px;box-shadow:0 8px 0 #cdbf9f,0 14px 24px rgba(0,0,0,.2)}
+.mon .sc{height:min(40vw,170px);background:radial-gradient(#4b5559,#2a3033);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#cfe9d4;font-family:"Courier New",monospace;font-size:.8rem;gap:8px}
+.bar{width:70%;height:10px;border:1px solid #cfe9d4;display:none}
+.bar i{display:block;height:100%;width:0;background:#cfe9d4}
+.usb{width:92px;height:46px;background:#8fe0c0;border-radius:14px;box-shadow:0 4px 0 #62b898;display:flex;align-items:center;justify-content:center;font-size:1.3rem;touch-action:none;cursor:grab;position:relative;z-index:5}
+.usb:before{content:"";position:absolute;left:-14px;width:18px;height:22px;background:#cfd6d3;border-radius:3px}
+#s3{justify-content:flex-start;align-items:stretch;background:radial-gradient(120% 55% at 25% 112%,#8fcf5a 0 60%,transparent 61%),radial-gradient(100% 45% at 95% 112%,#6fb83f 0 60%,transparent 61%),linear-gradient(#f7c3d7,#fde7ef)}
+.icons{display:flex;gap:6px;padding:16px;flex-wrap:wrap}
+.ic{width:78px;text-align:center;font-size:.72rem;cursor:pointer;color:#5a3345}
+.ic span{display:block;font-size:2.1rem}
+.tb{position:absolute;left:0;right:0;bottom:0;height:38px;background:#f48fb1;color:#fff;display:flex;align-items:center;padding:0 12px;font-size:.8rem}
+.win{position:fixed;left:50%;top:46%;transform:translate(-50%,-50%);width:min(92vw,380px);max-height:70vh;display:none;flex-direction:column;background:#f6f4f4;border:2px solid #9db7e0;border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.3);overflow:hidden}
+.win.on{display:flex}
+.ttl{background:linear-gradient(#bcd3f2,#9db7e0);padding:6px 10px;display:flex;justify-content:space-between;font-size:.8rem;color:#23405f}
+.ttl u{text-decoration:none;cursor:pointer;padding:0 6px}
+.bd{padding:14px;overflow:auto}
+.let{font-family:"Courier New",monospace;font-size:.86rem;line-height:1.6;background:repeating-linear-gradient(#fff 0 1.6em,#dbe6f5 1.6em calc(1.6em + 1px))}
+.let p{margin-bottom:1.6em}
+.let h3{font-size:.95rem;margin-bottom:1.2em;color:#b23a6b}
+.ph img{width:100%;border-radius:4px;display:block}
+.nav{display:flex;justify-content:center;gap:16px;margin-top:10px}
+.nav button,.vm button{border:0;background:#f48fb1;color:#fff;border-radius:6px;padding:6px 14px;font-size:1rem}
+.vm{display:flex;align-items:center;gap:10px}
+.vm input{flex:1}
+.note{font-size:.72rem;color:#7d7174;margin-top:8px}
+iframe{width:100%;height:152px;border:0;border-radius:12px;display:block}
+.bgw{position:fixed;top:12px;right:12px;z-index:9999;display:none;align-items:center;gap:8px;background:rgba(255,255,255,.9);border-radius:20px;padding:5px 6px 5px 12px;font-size:.75rem;box-shadow:0 2px 8px rgba(0,0,0,.25);max-width:62vw;color:#3b3335}
+.bgw span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bgw button{border:0;background:#f48fb1;color:#fff;border-radius:50%;width:28px;height:28px;flex:none}
+</style></head><body>
+
+<div class="scr on" id="s1">
+  <div id="fl"></div>
+  <div class="for">for Nara</div>
+  <small>ketuk untuk lanjut</small>
+</div>
+
+<div class="scr" id="s2">
+  <small>sebuah memory stick dari Aster</small>
+  <b>colok ke monitor untuk lihat isinya</b>
+  <div class="mon" id="mon"><div class="sc" id="sc"><span id="mt">( monitor menunggu )</span><div class="bar" id="bar"><i id="bi"></i></div></div></div>
+  <div class="usb" id="usb">♥</div>
+  <small>seret flashdisk ke monitor</small>
+</div>
+
+<div class="scr" id="s3">
+  <div class="icons">
+    <div class="ic" data-w="w1"><span>✉️</span>surat.txt</div>
+    <div class="ic" data-w="w5"><span>⭐</span>kenapa kamu bintang</div>
+    <div class="ic" data-w="w6"><span>💗</span>gombalan</div>
+    <div class="ic" data-w="w7"><span>💌</span>dari hatiku</div>
+    <div class="ic" data-w="w2"><span>🖼️</span>foto kita</div>
+    <div class="ic" data-w="w4"><span>🎙️</span>voice memo</div>
+  </div>
+  <div class="tb">♡ untuk Nara</div>
+
+  <div class="win" id="w1"><div class="ttl">surat.txt<u data-x>✕</u></div><div class="bd let">
+    <p>Selamat ulang tahun, sayangku. ❤️ Aku bersyukur bisa mengenalmu dan menjadi bagian dari hidupmu. Di hari spesialmu ini, aku berharap kamu selalu diberikan kesehatan, kebahagiaan, dan kemudahan dalam setiap langkahmu. Semoga semua hal yang selama ini kamu impikan perlahan bisa menjadi kenyataan.</p>
+    <p>Terima kasih sudah hadir dan memberikan warna dalam hidupku. Aku mungkin tidak sempurna, tapi aku ingin terus ada di sampingmu, menemanimu dalam segala keadaan. Tetaplah menjadi dirimu sendiri, jangan pernah kehilangan senyummu, dan ingatlah bahwa kamu begitu berharga bagiku. Aku sayang kamu. ❤️</p>
+  </div></div>
+
+  <div class="win" id="w5"><div class="ttl">kenapa kamu bintang ⭐<u data-x>✕</u></div><div class="bd let">
+    <h3>Nara, ini alasannya:</h3>
+    <p>⭐ Di malam yang paling gelap pun, kamu yang paling terang buatku.</p>
+    <p>⭐ Senyummu bisa bikin hariku yang berantakan jadi rapi lagi.</p>
+    <p>⭐ Caramu bertanya bikin aku betah mendengarkanmu lama-lama.</p>
+    <p>⭐ Sikap lucumu itu obat paling ampuh buat capekku.</p>
+    <p>⭐ Kamu nggak perlu jadi sempurna. Kamu sudah paling pas buatku.</p>
+  </div></div>
+
+  <div class="win" id="w6"><div class="ttl">gombalan 💗<u data-x>✕</u></div><div class="bd let">
+    <h3>Peringatan: mengandung gombalan.</h3>
+    <p>💗 Nara, bedanya kamu sama kopi apa? Kopi bikin aku melek semalaman, kalau kamu bikin aku nggak bisa tidur gara-gara kangen.</p>
+    <p>💗 Kamu lagi sibuk apa? Soalnya dari tadi kamu sibuk banget mondar-mandir di pikiranku.</p>
+    <p>💗 Kamu pasti WiFi, ya? Soalnya tiap ada kamu, hatiku langsung terhubung.</p>
+    <p>💗 Aku nggak butuh peta. Asal tujuannya kamu, aku rela nyasar berkali-kali.</p>
+    <p>💗 Katanya jantung cuma berdetak buat hidup. Tapi punyaku berdetak lebih kencang tiap ingat kamu.</p>
+  </div></div>
+
+  <div class="win" id="w7"><div class="ttl">dari hatiku 💌<u data-x>✕</u></div><div class="bd let">
+    <p>Nara, ada hal-hal yang sulit aku ucapkan langsung, jadi aku titip di sini.</p>
+    <p>Aku nggak janji jadi yang paling sempurna, tapi aku janji jadi yang paling sungguh-sungguh.</p>
+    <p>Kalau suatu hari kamu lelah, ingat ada aku yang siap jadi tempatmu pulang. Kamu nggak harus kuat sendirian.</p>
+    <p>Terima kasih sudah memilih aku, dan semoga kita selalu saling memilih, setiap hari.</p>
+    <p>Aku sayang kamu, Nara. 💖<br>— Aster</p>
+  </div></div>
+
+  <div class="win" id="w2"><div class="ttl">foto kita<u data-x>✕</u></div><div class="bd ph">
+    <img id="pi" alt=""><p class="note" id="pn"></p>
+    <div class="nav"><button id="pp">‹</button><span id="pc"></span><button id="pnx">›</button></div>
+  </div></div>
+
+
+  <div class="win" id="w4"><div class="ttl">voice memo<u data-x>✕</u></div><div class="bd">
+    <div class="vm"><button id="pl">▶</button><input type="range" id="sk" value="0" min="0" max="100"><span id="tm">0:00</span></div>
+    <audio id="au" preload="metadata"><source src="suara.m4a"><source src="suara.mp3"></audio>
+    <p class="note">Pakai headset ya, ini suaraku untukmu ♡</p>
+  </div></div>
+</div>
+
+<div id="bgw" class="bgw"><span id="bgn"></span><button id="bgp">▶</button></div>
+<audio id="bgm" loop preload="auto"><source src="musik.mp3"><source src="musik.m4a"></audio>
+<script>
+/* ====== EDIT DI SINI ====== */
+const PHOTOS = ["foto1.jpg","foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg","foto6.jpg","foto7.jpg","foto8.jpg"];
+/* ========================== */
+const $=id=>document.getElementById(id);
+const show=id=>{document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));$(id).classList.add('on')};
+
+/* bunga */
+(function(){
+  const cols=['#d4559a','#b83b86','#e98ab8','#9b2f73','#f2a6c8'];
+  const pts=[[100,60],[58,92],[142,92],[78,40],[122,44]];
+  let h='<svg viewBox="0 0 200 220" width="220">';
+  pts.forEach((p,i)=>{
+    h+='<g class="fl" style="animation-delay:'+(i*.3)+'s"><path d="M100 215 Q'+((100+p[0])/2)+' 140 '+p[0]+' '+p[1]+'" stroke="#4f9d4a" stroke-width="4" fill="none"/>';
+    for(let k=0;k<6;k++)h+='<ellipse cx="'+p[0]+'" cy="'+(p[1]-13)+'" rx="7" ry="14" fill="'+cols[i]+'" transform="rotate('+(k*60)+' '+p[0]+' '+p[1]+')"/>';
+    h+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="6" fill="#fff3b0"/></g>';
+  });
+  $('fl').innerHTML=h+'</svg>';
+})();
+$('s1').onclick=()=>{startBgm();show('s2')};
+
+/* seret flashdisk */
+const usb=$('usb'),mon=$('mon');
+let sx=0,sy=0,ox=0,oy=0,drag=false;
+usb.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX-ox;sy=e.clientY-oy;usb.setPointerCapture(e.pointerId)});
+usb.addEventListener('pointermove',e=>{if(!drag)return;ox=e.clientX-sx;oy=e.clientY-sy;usb.style.transform='translate('+ox+'px,'+oy+'px)'});
+usb.addEventListener('pointerup',()=>{
+  drag=false;
+  const a=usb.getBoundingClientRect(),b=mon.getBoundingClientRect(),cx=a.left+a.width/2,cy=a.top+a.height/2;
+  if(cx>b.left&&cx<b.right&&cy>b.top&&cy<b.bottom)plug();else{ox=oy=0;usb.style.transform=''}
+});
+function plug(){
+  usb.style.display='none';
+  $('mt').textContent='memuat kenangan...';
+  $('bar').style.display='block';
+  let w=0;const t=setInterval(()=>{w+=4;$('bi').style.width=w+'%';if(w>=100){clearInterval(t);setTimeout(()=>show('s3'),400)}},90);
+}
+
+/* jendela */
+let z=10;
+document.querySelectorAll('.ic').forEach(i=>i.onclick=()=>{const w=$(i.dataset.w);w.classList.add('on');w.style.zIndex=++z});
+document.querySelectorAll('[data-x]').forEach(x=>x.onclick=()=>{x.closest('.win').classList.remove('on')});
+
+/* foto */
+let pi=0;
+function ph(){
+  const im=$('pi');im.style.display='block';$('pn').textContent='';
+  im.onerror=()=>{im.style.display='none';$('pn').textContent='Foto belum ada. Taruh '+PHOTOS[pi]+' di folder yang sama.'};
+  im.src=PHOTOS[pi];$('pc').textContent=(pi+1)+' / '+PHOTOS.length;
+}
+$('pp').onclick=()=>{pi=(pi-1+PHOTOS.length)%PHOTOS.length;ph()};
+$('pnx').onclick=()=>{pi=(pi+1)%PHOTOS.length;ph()};
+ph();
+
+/* lagu */
+
+/* voice memo */
+const au=$('au'),pl=$('pl'),sk=$('sk');
+const fm=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+pl.onclick=()=>{if(au.paused){au.play();pl.textContent='❚❚'}else{au.pause();pl.textContent='▶'}};
+au.ontimeupdate=()=>{sk.value=au.duration?au.currentTime/au.duration*100:0;$('tm').textContent=fm(au.currentTime)};
+au.onended=()=>{pl.textContent='▶'};
+sk.oninput=()=>{if(au.duration)au.currentTime=sk.value/100*au.duration};
+/* musik latar */
+const TRACK_NAME = "Until I Found You - Stephen Sanchez";
+const bgm=$('bgm'), bp=$('bgp');
+let bgmOn=true;
+$('bgn').textContent='♪ '+TRACK_NAME;
+bgm.volume=0.6;
+function startBgm(){bgm.play().then(()=>{bp.textContent='❚❚'}).catch(()=>{});$('bgw').style.display='flex'}
+bp.onclick=()=>{if(bgm.paused){bgmOn=true;bgm.play();bp.textContent='❚❚'}else{bgmOn=false;bgm.pause();bp.textContent='▶'}};
+au.addEventListener('play',()=>{bgm.pause();bp.textContent='▶'});
+au.addEventListener('pause',()=>{if(bgmOn){bgm.play();bp.textContent='❚❚'}});
+au.addEventListener('ended',()=>{if(bgmOn){bgm.play();bp.textContent='❚❚'}});
+</script>
+</body></html>
